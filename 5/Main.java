@@ -8,22 +8,22 @@ Now create a try and catch block to handle the exception occurred in
 method using pre-defined methods of exception. Use printStackTrace() to
 see the propagation of the exception.
  */
-    public static void method1() {
+    public static void function1() {
         int a = 10, b = 0;
         int result = a / b; 
     }
 
-    public static void method2() {
-        method1();
+    public static void function2() {
+        function1();
     }
 
-    public static void method3() {
-        method2();
+    public static void function3() {
+        function2();
     }
 
     public static void main(String[] args) {
         try {
-            method3();
+            function3();
         } catch (ArithmeticException e) {
             System.out.println("Exception caught in main:");
             e.printStackTrace(); 

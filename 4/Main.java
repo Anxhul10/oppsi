@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
-// Custom Exception class for invalid age
+
 class InvalidAgeException extends Exception {
     public InvalidAgeException(String message) {
         super(message);
     }
 }
 
-// Custom Exception class for invalid dimensions of a rectangle
 class InvalidRectangleException extends Exception {
     public InvalidRectangleException(String message) {
         super(message);
@@ -43,9 +42,14 @@ public class Main {
             double width = sc.nextDouble();
             checkRectangleDimensions(length, width);
 
-        } catch (InvalidAgeException | InvalidRectangleException e) {
+        } catch (InvalidAgeException e) {
             System.out.println(e.getMessage());
-        } finally {
+        } 
+        catch(InvalidRectangleException e){
+            System.out.println(e.getMessage());
+        }
+        finally {
+            System.out.println("this finally block always executess");
             sc.close();
         }
     }
